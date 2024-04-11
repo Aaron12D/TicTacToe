@@ -10,23 +10,26 @@ function checkWin(){
     const nine = document.querySelector('#nine').textContent;
     let player = '';
 
-    const checkForThree = ((one == two && two == three && one == player)
-        || (four == five && five == six && four.length == 1)
-        || (seven == eight && eight == nine && seven.length == 1) 
-        || (one == four && four == seven && one.length == 1)
-        || (two == five && five == eight && two.length == 1)
-        || (three == six && six == nine && three.length == 1)
-        || (one == five && five == nine && one.length == 1)
-        || (three == five && five == seven && three.length == 1)
-        );
-    console.log()
+    function checkForThree() { 
+        return ((one == two && two == three && one == player && one.length == 1)
+        || (four == five && five == six && four == player && four.length == 1)
+        || (seven == eight && eight == nine && seven == player && seven.length == 1) 
+        || (one == four && four == seven && one == player && one.length == 1)
+        || (two == five && five == eight && two == player && two.length == 1)
+        || (three == six && six == nine && three == player && three.length == 1)
+        || (one == five && five == nine && one == player && one.length == 1)
+        || (three == five && five == seven && three == player && three.length == 1)
+        )};
     
     function oWinner(){
         player = 'o'
+        checkForThree
         console.log(player)
-        return checkForThree ? console.log('o wins') : (player = 'x')}
+        return checkForThree() ? console.log('o wins') :'';
+    };
 
-    xWinner = (() => {checkForThree ? console.log('x wins') : (oWinner())})();
+    player = 'x';
+    xWinner = (() => {checkForThree() ? console.log('x wins') : (oWinner())})();
     
 };
 
