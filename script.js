@@ -22,13 +22,13 @@ function checkWin(){
         )};
     
     function oWinner(){
-        player = 'o'
+        player = 'O'
         checkForThree
         console.log(player)
         return checkForThree() ? console.log('o wins') :'';
     };
 
-    player = 'x';
+    player = 'X';
     xWinner = (() => {checkForThree() ? console.log('x wins') : (oWinner())})();
     
 };
@@ -39,8 +39,8 @@ const playerTurn = (() => {
         
     event.target.className === 'boxes' ? 
         (marker = (() => {
-        ((player % 2 == 0) && event.target.textContent == '') ? (event.target.textContent = 'x', player++)
-        :event.target.textContent == '' ? (event.target.textContent = 'o', player++) :'';
+        ((player % 2 == 0) && event.target.textContent == '') ? (event.target.textContent = 'X', player++)
+        :event.target.textContent == '' ? (event.target.textContent = 'O', player++) :'';
          })(),
          checkWin()) :'';
 });

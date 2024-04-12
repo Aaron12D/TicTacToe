@@ -1,3 +1,6 @@
+body{
+    background-color: #1b2536;
+}
 .grid{
     display: grid;
     grid-template-rows: repeat(3, 50px);
@@ -5,5 +8,33 @@
     gap: 10px;
 }
 .grid div{
-    background-color: aqua;
+    background-color: #c4cbcc;
+    color: #1b2536;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    display: ;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    font-size: 75px;
+    color: #c4cbcc;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #c4cbcc;
+}
+
+input::placeholder{
+    color: #a9b0bd;
+}
+li{
+    list-style: none;
 }
