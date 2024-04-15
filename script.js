@@ -19,18 +19,38 @@ function checkWin(){
         || (three == six && six == nine && three == player && three.length == 1)
         || (one == five && five == nine && one == player && one.length == 1)
         || (three == five && five == seven && three == player && three.length == 1)
-        )};
+    )};
+    
+    
     
     function oWinner(){
-        player = 'O'
-        checkForThree
-        console.log(player)
-        return checkForThree() ? console.log('o wins') :'';
+        player = 'O';
+        checkForThree();
+        return checkForThree() ? scoreboard() :'';
     };
 
     player = 'X';
-    xWinner = (() => {checkForThree() ? console.log('x wins') : (oWinner())})();
+    xWinner = (() => {checkForThree() ?  scoreboard(): (oWinner())})();
+};
+
+const scoreboard = () => {
+    const xScore = document.querySelector('#xScore');
+    let xScoreValue = document.querySelector('#xScore').textContent;
+    xScore.textContent = parseInt(xScoreValue)+1;
     
+    const oScore = document.querySelector('#oScore');
+    let oScoreValue = document.querySelector('#oScore').textContent;
+    oScore.textContent = parseInt(oScoreValue)+1;
+
+}
+
+
+function toggleDisplay() {
+    const form = document.querySelector('#form');
+    const gameboard = document.querySelector('.gameboard');
+
+    form.classList.toggle('toggleDisplay');
+    gameboard.classList.toggle('toggleDisplay');
 };
 
 const playerTurn = (() => {
@@ -42,6 +62,8 @@ const playerTurn = (() => {
         ((player % 2 == 0) && event.target.textContent == '') ? (event.target.textContent = 'X', player++)
         :event.target.textContent == '' ? (event.target.textContent = 'O', player++) :'';
          })(),
-         checkWin()) :'';
+         checkWin()) 
+    : event.target.id === 'start' ? (event.preventDefault(), toggleDisplay())
+    :'';
 });
 })();
