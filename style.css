@@ -14,6 +14,7 @@ body{
     justify-content: center;
     align-items: center;
     font-size: 100px;
+    border-radius: 15px;
 }
 #container{
     display: flex;
@@ -24,14 +25,23 @@ header{
     font-size: 75px;
     color: #c4cbcc;
 }
+fieldset{
+    border-radius: 15px;
+}
 form{
     display: flex;
     flex-direction: column;
     gap: 15px;
     color: #c4cbcc;
 }
-input, form, button, .p1{
+form div{
+    font-weight: 700;
+}
+input, form, #start, .p1, #restart{
     font-size: 30px;
+    border-radius: 15px;
+    padding: 5px;
+    border: none;
 }
 input::placeholder{
     color: #a9b0bd;
@@ -42,10 +52,38 @@ li{
 .toggleDisplay{
     display: none !important;
 }
+.flex{
+    display: flex;
+}
 .gameboard{
     display: flex;
+    flex-direction: column;
     color: #a9b0bd;
     font-size: 30px;
     text-align: center;
     gap: 15px;
+}
+#p1, #p2{
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 15px;
+}
+.highlight{
+    color: #1b2536;
+    background-color: #a9b0bd;
+}
+#result{
+    text-align: center;
+}
+#restart{
+    background-color: #a9b0bd;
+    color: #1b2536;
+    align-self: center;
+    border-radius: 15px;
+    border: none;
+    width: 200px;
+}
+#restart:hover, .boxes:hover, #start:hover, input:hover{
+    background-color: #97bcfd;
 }

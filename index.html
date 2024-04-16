@@ -11,41 +11,41 @@
     <div id="container">
         <header>Tic Tac Toe</header>
         <fieldset id="form">
-            <form action="">                   
-                        <label for="playerX">Player X:</label>
-                        <input type="text" name="playerX" id="X" placeholder="The X-Men">
-                    
-                    
-                        <label for="playerO">Player O:</label>
-                        <input type="text" name="playerO" id="O" placeholder="Frozone">
-                    
-                
-                        <button id="start">Start Game!</button>
-                    
-                
+            <form action="">  
+                <div>Who will be the first to 3 wins?</div>                 
+                <label for="X">Player X:</label>
+                <input type="text" name="playerX" id="X" placeholder="The X-Men">
+                <label for="O">Player O:</label>
+                <input type="text" name="playerO" id="O" placeholder="Frozone">
+                <button id="start">Start Game!</button>
             </form>
         </fieldset>
         <section class="gameboard toggleDisplay">
-            <div>
-                <div id="p1">player X:</div>
-                <div id="xScore">0</div>
+            <div class="flex">
+                <div>
+                    <div class="highlight" id="p1">player X:</div>
+                    <div id="xScore">0</div>
+                </div>
+                <section class="grid " id="grid">
+                    <div class="boxes" id="one"></div>
+                    <div class="boxes" id="two"></div>
+                    <div class="boxes" id="three"></div>
+                    <div class="boxes" id="four"></div>
+                    <div class="boxes" id="five"></div>
+                    <div class="boxes" id="six"></div>
+                    <div class="boxes" id="seven"></div>
+                    <div class="boxes" id="eight"></div>
+                    <div class="boxes" id="nine"></div>
+                </section>
+                <div>
+                    <div id="p2">Player O:</div>
+                    <div id="oScore">0</div>
+                </div>
             </div>
-            <section class="grid " id="grid">
-                <div class="boxes" id="one"></div>
-                <div class="boxes" id="two"></div>
-                <div class="boxes" id="three"></div>
-                <div class="boxes" id="four"></div>
-                <div class="boxes" id="five"></div>
-                <div class="boxes" id="six"></div>
-                <div class="boxes" id="seven"></div>
-                <div class="boxes" id="eight"></div>
-                <div class="boxes" id="nine"></div>
-            </section>
-            <div>
-                <div id="p2">Player O:</div>
-                <div id="oScore">0</div>
-            </div>
+            <div id="result"></div>
+            <button id="restart">Restart</button>
         </section>
+
     </div>
 </body>
 </html>
